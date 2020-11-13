@@ -16,5 +16,5 @@ jobs:
     - dist: xenial
 
 script:
-    - dotnet build CIDemo.sln -c Release
+    - dotnet build test1/test1.sln -c Release
     - dotnet test -c Release --no-build test/test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
