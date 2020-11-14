@@ -5,10 +5,8 @@ os: linux
 
 install:
   - nuget restore test1/test1.sln
-  - nuget install xunit.runners -OutputDirectory testrunner
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
   
 script: 
-    - dotnet restore
     - msbuild /p:Configuration=Release test1/test1.sln
-    - dotnet build test1/test1.sln -c Release    
     - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe .test/test.sln
